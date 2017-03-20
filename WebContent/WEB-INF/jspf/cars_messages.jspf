@@ -1,0 +1,23 @@
+<%@ page pageEncoding="UTF-8"%>
+<%@ include file="/WEB-INF/jspf/directive/page.jspf" %>
+<%@ include file="/WEB-INF/jspf/directive/taglib.jspf" %>
+
+<%-- MESSAGES FROM COMMAND EDIT CAR ABOUT SUCCESS OR ERROR --%>
+				<c:if test="${message =='success'}">
+					<h4 class="success"><fmt:message key="admin.cars.success"/></h4>
+				</c:if>
+				<c:if test="${message =='error'}">
+					<h4 class="error"><fmt:message key="admin.cars.error"/></h4>
+				</c:if>
+				<c:if test="${not empty answer}">
+					<h3 class="error">${answer}</h3>
+				</c:if>
+			<%-- MESSAGES END --%>
+			<%-- MESSAGES FROM COMMAND DELETE CAR ABOUT SUCCESS OR ERROR --%>
+			<c:if test="${messageDelete =='success'}">
+				<h3 class="success"><fmt:message key="admin.deletecar.success"/></h3>
+			</c:if>
+			<c:if test="${messageDelete =='error'}">
+				<h3 class="error"><fmt:message key="admin.deletecar.error"/></h3>
+			</c:if>
+			<%-- MESSAGES END --%>

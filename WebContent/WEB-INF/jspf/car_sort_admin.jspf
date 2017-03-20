@@ -1,0 +1,84 @@
+<%@ include file="/WEB-INF/jspf/directive/page.jspf" %>
+<%@ include file="/WEB-INF/jspf/directive/taglib.jspf" %>
+
+					<!-- jspf for sort sort and choose cars by parameters  -->
+
+<form action="controller">
+				
+			     <%--
+			   --------------   Choose cars ------------------
+			      --%>
+				<fmt:message key="car.Choose"/>
+					<input type="hidden" name="command" value="openCars"/>
+					
+					<%--
+					---------- Choose by mark ---------------
+					--%>	
+						<fmt:message key="car.Choose.Mark"/>:
+						<select name="carName">
+							<option><fmt:message key="car.All"/></option>
+							<c:set var="k" value="0"/>
+							<c:forEach var="String" items="${carNames}">
+							<c:set var="k" value="${k+1}"/> 
+							<c:if test="${carName == String}">
+								<option selected>${String}</option>
+							</c:if>
+							<c:if test="${carName != String}">
+								<option>${String}</option>
+							</c:if>
+							</c:forEach>
+						</select>
+						
+						<%--
+						---------- Choose by class ---------------
+						--%>	
+						<fmt:message key="car.Choose.Class"/>:
+						<select name="carClass">
+							<option><fmt:message key="car.All"/></option>
+							<c:set var="k" value="0"/>
+							<c:forEach var="String" items="${carClasses}">
+							<c:set var="k" value="${k+1}"/> 
+							<c:if test="${carClass == String}">
+								<option selected>${String}</option>
+							</c:if>
+							<c:if test="${carClass != String}">
+								<option>${String}</option>
+							</c:if>
+							</c:forEach>
+						</select>
+						
+						<%--
+			   			--------------   Sort cars by Mark, Year and Price ------------------
+			      		--%>
+						<fmt:message key="car.Sort"/>:
+						<select name="sort">
+							<c:set var="k" value="0"/>
+							<c:forEach var="String" items="${sortValues}">
+							<c:set var="k" value="${k+1}"/> 
+							<c:if test="${sort == String}">
+								<c:if test="${String == 'Mark'}">
+									<option value="${String}"selected><fmt:message key="car.Mark"/></option>
+								</c:if>
+								<c:if test="${String == 'Year'}">
+									<option value="${String}"selected><fmt:message key="car.Year"/></option>
+								</c:if>
+								<c:if test="${String == 'Price'}">
+									<option value="${String}"selected><fmt:message key="car.Price"/></option>
+								</c:if>
+							</c:if>
+							<c:if test="${sort != String}">
+								<c:if test="${String == 'Mark'}">
+									<option value="${String}"><fmt:message key="car.Mark"/></option>
+								</c:if>
+								<c:if test="${String == 'Year'}">
+									<option value="${String}"><fmt:message key="car.Year"/></option>
+								</c:if>
+								<c:if test="${String == 'Price'}">
+									<option value="${String}"><fmt:message key="car.Price"/></option>
+								</c:if>
+							</c:if>
+							</c:forEach>
+						</select>
+						<input value="<fmt:message key="car.Choose.submit"/>" type="submit"/>
+						
+				</form>	

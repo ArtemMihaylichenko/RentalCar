@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib version="2.0" xmlns="http://java.sun.com/xml/ns/j2ee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd">
+	<tlib-version>2.0</tlib-version>
+	<short-name>rentCar</short-name>
+	<uri>/WEB-INF/tagOutput</uri>
+	
+<function>
+		<name>userFullName</name>
+		<function-class>ua.nure.mihaylichenko.SummaryTask4.web.tag.Output</function-class>
+		<function-signature>java.lang.String userFullName(ua.nure.mihaylichenko.SummaryTask4.db.entity.User)</function-signature>
+</function>	
+
+<function>
+		<name>carName</name>
+		<function-class>ua.nure.mihaylichenko.SummaryTask4.web.tag.Output</function-class>
+		<function-signature>java.lang.String carName(ua.nure.mihaylichenko.SummaryTask4.db.entity.Car)</function-signature>
+</function>
+
+<function>
+		<name>dateToString</name>
+		<function-class>ua.nure.mihaylichenko.SummaryTask4.web.tag.Output</function-class>
+		<function-signature>java.lang.String dateToString(java.sql.Date)</function-signature>
+</function> 
+
+<function>
+		<name>statusToString</name>
+		<function-class>ua.nure.mihaylichenko.SummaryTask4.web.tag.Output</function-class>
+		<function-signature>java.lang.String userStatusToString(ua.nure.mihaylichenko.SummaryTask4.db.entity.User)</function-signature>
+</function> 
+</taglib>

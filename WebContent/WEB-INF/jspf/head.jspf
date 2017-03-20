@@ -1,0 +1,11 @@
+<%@ include file="/WEB-INF/jspf/directive/page.jspf" %>
+<%@ include file="/WEB-INF/jspf/directive/taglib.jspf" %>
+
+			<%-- Head to all pages --%>
+<head>
+	<title>
+		${title}
+	</title>
+	<link rel="stylesheet" type="text/css" media="screen" href="style/summary_task4.css"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>

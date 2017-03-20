@@ -1,0 +1,80 @@
+<%@ page import="ua.nure.mihaylichenko.SummaryTask4.db.enumeration.Roles" %>
+<%@ include file="/WEB-INF/jspf/directive/page.jspf" %>
+<%@ include file="/WEB-INF/jspf/directive/taglib.jspf" %>
+
+<tr>
+<td id="header">
+
+<c:if test="${not empty user}">
+
+<div id="left">
+
+	<c:choose>
+		<c:when test="${role.name == 'admin' }">
+			<a href="controller?command=mainAdmin"><fmt:message key="admin.Users"/></a>
+			<a href="controller?command=openCars"><fmt:message key="admin.Cars"/></a>
+		</c:when>
+		<c:when test="${role.name == 'manager' }">
+			<a href="controller?command=mainManager"><fmt:message key="head.orders.manager"/></a>
+			<a href="controller?command=allMessages"><fmt:message key="messages.messages"/></a>
+		</c:when>
+		<c:when test="${role.name == 'client'}">
+			<a href="controller?command=mainClient"><fmt:message key="head.cars"/></a>
+			<a href="controller?command=clientOrders"><fmt:message key="head.orders.client"/></a>
+			<a href="controller?command=feedBack"><fmt:message key="feedback"/></a>
+		</c:when>
+	</c:choose>
+	
+	<a href="controller?command=viewSettings"><fmt:message key="head.settings"/></a>
+
+</div>
+
+<div id="right" >
+ 
+		${out:userFullName(user)} 
+	
+	<c:if test="${not empty role}">
+		<c:out value="(${role.name})"/>
+	</c:if>
+
+	<a href="controller?command=logout">
+		<fmt:message key="head.logout"/>
+	</a> 	
+
+</div>
+</c:if>
+<c:if test="${empty user}">
+	<div id="right">
+		<form action="controller">
+					<input type="hidden" name="command" value="chooseLanguage" /> 
+			
+				<select name="language">
+				<c:if test="${empty sessionScope.language}">
+					<option value="en" ><fmt:message key="login.language.en"/></option>
+					<option value="ru"><fmt:message	key="login.language.ru"/></option>
+				</c:if>
+				<c:if test="${not empty sessionScope.language}">
+					<c:if test="${sessionScope.language =='ru'}">
+					<option value="en"><fmt:message key="login.language.en"/></option>
+					<option value="ru" selected="selected"><fmt:message key="login.language.ru"/></option>
+					</c:if>
+					<c:if test="${sessionScope.language =='en'}">
+					<option value="en" selected="selected"><fmt:message key="login.language.en"/></option>
+					<option value="ru"><fmt:message key="login.language.ru"/></option>
+					</c:if>
+				</c:if>
+				</select>
+				<input type="submit" value=<fmt:message	key="login.submit"/>>
+			</form>
+	</div>
+</c:if>
+
+<c:if test="${empty user and title ne 'Login'}">
+	<div id="right">
+		<a href="controller?command=loginForward"><fmt:message key="login.Login"/></a>
+	</div>
+</c:if>
+
+	</td>
+</tr>
+

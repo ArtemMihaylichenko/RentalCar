@@ -1,0 +1,61 @@
+<%@ include file="/WEB-INF/jspf/directive/page.jspf" %>
+<%@ include file="/WEB-INF/jspf/directive/taglib.jspf" %>
+
+					<%-- jspf for choose users by parameters  --%>
+
+<form action="controller">
+				
+			     <%--
+			   --------------   Choose users ------------------
+			      --%>
+				<fmt:message key="user.searchBy"/>
+					<input type="hidden" name="command" value="mainAdmin"/>
+					
+					<%--
+					---------- Choose by mark ---------------
+					--%>	
+						
+						<select name="searchBy">
+							<c:set var="k" value="0"/>
+							<c:forEach var="String" items="${sort}">
+							<c:set var="k" value="${k+1}"/> 
+							
+							<c:if test="${String =='name'}">
+								<c:if test="${searchValue == String}">
+									<option selected value="${String}"><fmt:message key="user.search.name"/></option>
+								</c:if>
+								<c:if test="${searchValue != String}">
+									<option value="${String}"><fmt:message key="user.search.name"/></option>
+								</c:if>
+							</c:if>
+							<c:if test="${String =='surname'}">
+								<c:if test="${searchValue == String}">
+									<option selected value="${String}"><fmt:message key="user.search.surname"/></option>
+								</c:if>
+								<c:if test="${searchValue != String}">
+									<option value="${String}"><fmt:message key="user.search.surname"/></option>
+								</c:if>
+							</c:if>
+							<c:if test="${String =='login'}">
+								<c:if test="${searchValue == String}">
+									<option selected value="${String}"><fmt:message key="user.search.login"/></option>
+								</c:if>
+								<c:if test="${searchValue != String}">
+									<option value="${String}"><fmt:message key="user.search.login"/></option>
+								</c:if>
+							</c:if>
+							<c:if test="${String =='date'}">
+								<c:if test="${searchValue == String}">
+									<option selected value="${String}"><fmt:message key="user.search.date"/></option>
+								</c:if>
+								<c:if test="${searchValue != String}">
+									<option value="${String}"><fmt:message key="user.search.date"/></option>
+								</c:if>
+							</c:if>
+							</c:forEach>
+						</select>
+						
+						<input name="search" value="${search}">
+						<input value="<fmt:message key="user.Search"/>" type="submit"/>
+						
+				</form>	

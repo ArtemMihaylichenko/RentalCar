@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+  <Resource name="jdbc/SummaryTask4" 
+  		auth="Container" type="javax.sql.DataSource"
+		maxIdle="30" maxWait="10000" 
+		username="root" password="root"
+		driverClassName="com.mysql.jdbc.Driver"
+		url="jdbc:mysql://localhost/rental_car?useSSL=false" />
+</Context>

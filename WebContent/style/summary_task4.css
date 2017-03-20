@@ -1,0 +1,146 @@
+
+body {
+	margin: 0;
+	background: url(font.jpg);
+	background-size: cover;	
+}
+
+table {
+	border-collapse:collapse;
+	background-size: cover;	
+}
+
+td {
+	border:1px solid black;
+	padding: 2px;
+}
+
+
+#header, #footer {
+	border: 0px solid;	
+}
+
+.title {
+	border: 0px solid;	
+	font-size: 55px;
+	text-align: center;
+	color: #0C5DF2;
+}
+
+.lesstitle {
+	border: 0px solid;	
+	font-size: 25px;
+	text-align: center;
+	color: BLACK;
+}
+
+.invis {
+	border: 0px solid;	
+}
+.aqua {
+	background: #07F7F3;
+}
+.open {
+	background: #F6FF00;
+}
+.close {
+	background: #C7C7BB;
+}
+.conf {
+	background: #0DFF00;
+}
+.no {
+	background: #FF0000;
+}
+.tl {
+	border: 0px solid;	
+	font-size: large;
+	text-align: center;
+	color: BLACK;
+}
+.error {
+	border: 0px solid;	
+	font-size: large;
+	text-align: center;
+	color: #FF0000;
+}
+.success {
+	border: 0px solid;	
+	font-size: large;
+	text-align: center;
+	color: #0DFF00;
+}
+
+
+#container {
+	width: 100%;
+	height: 100%;
+}
+
+#header {
+	background: #00BFFF;
+	padding: 0px;
+}
+
+#left {
+	float: left;
+	margin-left: 10px;
+	padding: 2px;
+}
+
+#right {
+	float: right;
+	text-align: right;
+	margin-right: 10px;
+	padding: 2px;
+}
+
+.items {
+	height: 100%;	
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 10px;
+	text-align: left;
+	vertical-align: top;
+	border: 0px solid;	
+}
+.centercontent {
+	height: 100%;	
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 10px;
+	text-align: left;
+	vertical-align: top;
+	border: 0px solid;	
+}
+.center {
+	text-align: center;
+	vertical-align: middle;
+}
+
+.items_center {
+	height: 100%;	
+	text-align: center;
+	vertical-align: center;
+	horizontal-align: center;
+	border: 0px solid;	
+}
+
+
+#footer {
+	text-align: center;
+	background: #00BFFF;
+}
+
+#login > fieldset {
+	display: inline;
+}
+
+#login > input[type=submit] {
+	margin-top: 5px;
+}
+
+#table {
+	margin-top: 5px;
+	text-align: center;
+}
